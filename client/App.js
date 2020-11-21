@@ -1,4 +1,3 @@
-
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -9,6 +8,9 @@ import Profile from './components/Profile/Profile';
 import Greenhouse from './components/Greenhouse/Greenhouse';
 
 import SearchPlant from './components/SearchPlant/SearchPlant';
+import logo from './assets/logo.png';
+
+import './styles/index.scss';
 
 const App = () => {
   return (
@@ -16,7 +18,7 @@ const App = () => {
       <div className="">
         <nav>
           <div className="logo-container">
-            <img src={'./logo.png'} />
+            <img src={logo} />
           </div>
           <ul>
             <li>
@@ -30,8 +32,8 @@ const App = () => {
             </li>
             <li>
               <Link to="/plant">Plant Page</Link>
-    </li>
-    <li>
+            </li>
+            <li>
               <Link to="/search">SEARCH</Link>
             </li>
           </ul>
@@ -42,17 +44,15 @@ const App = () => {
             <Profile />
           </Route>
           <Route path="/plant" render={(props) => <Plant {...props} />} />
-          {/* <Plant />
-          </Route> */}
           <Route path="/search">
             <SearchPlant />
           </Route>
           <Route path="/login">
-            <LoginForm />
+            <Login />
           </Route>
-          {/* <Route path="/">
+          <Route path="/">
             <Greenhouse />
-          </Route> */}
+          </Route>
         </Switch>
       </div>
     </Router>

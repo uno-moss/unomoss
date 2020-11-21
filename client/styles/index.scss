@@ -9,3 +9,13 @@ $info: blue;
 body {
   margin: 0;
 }
+
+nav {
+  display: flex;
+
+  ul {
+    li {
+      display: inline;
+    }
+  }
+}
