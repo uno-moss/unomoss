@@ -104,6 +104,9 @@ const plantInfo = (sequelize, DataTypes) => {
     fruitMonths: {
       type: DataTypes.STRING,
     },
+    image: {
+      type: DataTypes.STRING,
+    }
   });
 
   PlantInfo.associate = models => {
