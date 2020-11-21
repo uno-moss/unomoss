@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 require('regenerator-runtime/runtime');
 import SearchResults from './SearchResults';
-
+//import './Login.scss';
 const apiKey = 'PM3BHHsn1BYggmzwVudKgtHVtS5yD-szFUEvt-VQ06I';
 
 function SearchBarInput() {
@@ -30,18 +30,19 @@ function SearchBarInput() {
     console.log(e);
   }
 
-  function handleClick(e) {
-    e.preventDefault();
-    console.log(plants);
-    console.log(Array.isArray(plants));
-  }
+  //FUNCTION BELOW IS ONLY USED IN TESTING DIFFERENT CONSOLE LOGS. COINCIDES WITH LINE 45
+  // function handleClick(e) {
+  //   e.preventDefault();
+  //   console.log(plants);
+  //   console.log(Array.isArray(plants));
+  // }
 
   return (
     <div>
       <form>
         <input type="text" name="searchTerm" onChange={handleOnChange} />
         <button onClick={fetchData}> Submit</button>
-        <button onClick={handleClick}>TEST</button>
+        {/* <button onClick={handleClick}>TEST</button> */}
       </form>
       {plants.length > 0 && (
         <SearchResults plantClickHandle={plantClickHandle} plants={plants} />

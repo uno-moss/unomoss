@@ -4,7 +4,7 @@ import SearchBarInput from './SearchBarInput';
 const SearchPlant = () => {
   return (
     <div>
-      <header>Please Work</header>
+      <header>Search for plants</header>
       <SearchBarInput initialSearch="hello" />
     </div>
   );

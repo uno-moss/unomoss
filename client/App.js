@@ -1,14 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-
-
-import LoginForm from "./components/Login/LoginForm";
-import Plant from "./components/Plant/Plant";
-import Profile from "./components/Profile/Profile";
+import LoginForm from './components/Login/LoginForm';
+import Plant from './components/Plant/Plant';
+import Profile from './components/Profile/Profile';
 //import Greenhouse from "./components/Greenhouse/Greenhouse";
-import SearchPlant from "./components/SearchPlant/SearchPlant";
-
+import SearchPlant from './components/SearchPlant/SearchPlant';
 
 const App = () => {
   return (
@@ -38,9 +35,9 @@ const App = () => {
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/plant">
-            <Plant />
-          </Route>
+          <Route path="/plant" render={(props) => <Plant {...props} />} />
+          {/* <Plant />
+          </Route> */}
           <Route path="/search">
             <SearchPlant />
           </Route>

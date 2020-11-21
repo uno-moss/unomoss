@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Plant = () => {
+const Plant = (props) => {
+  console.log(props);
+
   return <div>Plant page</div>;
 };
 
