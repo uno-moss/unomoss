@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import './Plant.scss';
 
 const Plant = (props) => {
+  console.log(props);
   // state will be plant details
   // need to import plant img url somehow
   const [details, setDetails] = useState({
-    commonName: '',
-    scientificName: '',
+    commonName: props.location.userPlant.common_name,
+    scientificName: props.location.userPlant.scientific_name,
     flowerColor: '',
     avgHeight: '',
     light: '',
@@ -33,11 +34,11 @@ const Plant = (props) => {
   } = details;
 
   const plantId = 'a number from url param - coming from plant item component';
-  useEffect(() => {
-    fetch(`/api/userplants/${plantId}`) // '/api/useplants/:id'
-      .then((resp) => resp.json())
-      .then((data) => setDetails(data));
-  });
+  // useEffect(() => {
+  //   fetch(`/api/userplants/${plantId}`) // '/api/useplants/:id'
+  //     .then((resp) => resp.json())
+  //     .then((data) => setDetails(data));
+  // });
 
   // on mount: fetch plant details from database using passed in props as url search param? plant name??
 
@@ -70,6 +71,9 @@ const Plant = (props) => {
         Bloom Months: {bloomMonths}
         <br></br>
       </div>
+      <button id="savePlant" onClick="handleClick">
+        Save Plant
+      </button>
     </div>
   );
 };

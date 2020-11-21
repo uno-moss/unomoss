@@ -22,7 +22,7 @@ const App = () => {
           </div>
           <ul>
             <li>
-              <Link to="/">My Greenhouse</Link>
+              <Link to="/greenhouse">My Greenhouse</Link>
             </li>
             <li>
               <Link to="/profile">My Profile</Link>
@@ -47,11 +47,11 @@ const App = () => {
           <Route path="/search">
             <SearchPlant />
           </Route>
-          <Route path="/login">
-            <Login />
+          <Route path="/greenhouse">
+            <Greenhouse />
           </Route>
           <Route path="/">
-            <Greenhouse />
+            <Login />
           </Route>
         </Switch>
       </div>

@@ -13,8 +13,9 @@ function SearchResults(props) {
               pathname: '/plant',
               userPlant: plant,
             }}
+            key={plant.id}
           >
-            <div className="Plant Container" key={plant.id}>
+            <div className="Plant Container">
               <img src={plant.image_url} />
               <p className="plantName">{plant.common_name}</p>
             </div>
