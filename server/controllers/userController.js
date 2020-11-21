@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 
 const userController = {};
 
-console.log(db);
-console.log(db.User);
+// console.log(db);
+// console.log(db.User);
 
 userController.createUser = async (req, res, next) => {
   console.log('creating user');

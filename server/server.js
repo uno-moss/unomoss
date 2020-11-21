@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
   return res.status(error.status).json(error.message);
 });
 
-sequelize.sync().then(() => {
+sequelize.sync({force: true}).then(() => {
   app.listen(3000, () => {
     console.log(`App listening on port 3000!`);
   });
