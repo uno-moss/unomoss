@@ -1,0 +1,23 @@
+#outerDiv2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: '. .';
+  background-color: #9bcd9b;
+  width: 560px;
+  border-radius: 8px;
+  margin: auto;
+  padding: 30px;
+}
+#innerDiv2 {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 20px;
+  text-align: left;
+  // padding-left: 50px;
+}
+img {
+  //width: 300px;
+  //   height: 200px;
+  padding-right: 40px;
+}

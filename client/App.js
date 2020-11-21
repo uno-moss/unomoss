@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import LoginForm from './components/Login/LoginForm';
+import Login from './components/Login/Login';
 import Plant from './components/Plant/Plant';
 import Profile from './components/Profile/Profile';
 import Greenhouse from './components/Greenhouse/Greenhouse';
@@ -26,6 +26,9 @@ const App = () => {
             <li>
               <Link to="/login">Login Page</Link>
             </li>
+            <li>
+              <Link to="/plant">Plant Page</Link>
+            </li>
           </ul>
         </nav>
 
@@ -40,7 +43,7 @@ const App = () => {
             <SearchPlant />
           </Route>
           <Route path="/login">
-            <LoginForm />
+            <Login />
           </Route>
           <Route path="/">
             <Greenhouse />

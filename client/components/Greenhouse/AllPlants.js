@@ -5,6 +5,7 @@ import SinglePlant from './PlantItem';
 const AllRows = () => {
   const urlData = 'https://image-server-codesmith.firebaseapp.com/images';
   const [images, setImages] = useState([]);
+  // need to fetch a plant id for each image
 
   useEffect(() => {
     console.log('component mounted');
@@ -21,7 +22,7 @@ const AllRows = () => {
   }, []);
 
   return (
-    <div id="#outerDiv">
+    <div id="outerDiv">
       {images.map((el) => {
         return <SinglePlant url={el} />;
       })}

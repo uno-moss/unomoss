@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./Login.scss";
+/* eslint-disable react/jsx-filename-extension */
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './Login.scss';
 
 const SignupForm = () => {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -11,8 +12,6 @@ const SignupForm = () => {
     <div className="login-body">
       <div>&nbsp;</div>
       <div id="login-box">
-        <img src="https://cdn4.iconfinder.com/data/icons/agriculture-soft/512/agriculture_farming_business_plant_farm_nature-512.png" />
-        <br></br>
         <form className="" onSubmit={handleSubmit(onSubmit)}>
           <label for="firstName">First Name:&nbsp;&nbsp;</label>
           <input
@@ -24,7 +23,8 @@ const SignupForm = () => {
           />
           <br></br>
           <br></br>
-          <label for="lastName">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+          <label for="lastName">Last Name:&nbsp;&nbsp;&nbsp;</label>
           <input
             type="text"
             id="lastName"
@@ -34,15 +34,9 @@ const SignupForm = () => {
           />
           <br></br>
           <br></br>
-          <input
-            type="text"
-            id="userName"
-            name="userName"
-            ref={register}
-            required
-          />
-          <br></br>
-          <br></br>
+          <label for="zipCode">
+            Zip Code:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </label>
           <input
             type="text"
             id="zipCode"
@@ -52,7 +46,23 @@ const SignupForm = () => {
           />
           <br></br>
           <br></br>
-          <label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <label for="email">
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </label>
+          <input type="text" id="email" name="email" ref={register} required />
+          <br></br>
+          <br></br>
+          <label for="userName">User Name:&nbsp;&nbsp;&nbsp;</label>
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            ref={register}
+            required
+          />
+          <br></br>
+          <br></br>
+          <label for="password">Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
           <input
             type="text"
             id="password"
@@ -66,12 +76,6 @@ const SignupForm = () => {
             SIGN UP
           </button>
         </form>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <hr></hr>
-        <br></br>
       </div>
       <div>&nbsp;</div>
     </div>
