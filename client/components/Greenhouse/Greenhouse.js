@@ -6,6 +6,7 @@ const Greenhouse = () => {
     <div>
       Greenhouse page
       <Link to="/plant">Go to plant</Link>
+      <Link to="/search">Go to Search</Link>
     </div>
   );
 };
