@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/markmanuelmiller/unomoss#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",

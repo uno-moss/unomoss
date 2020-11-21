@@ -14,9 +14,11 @@ const Greenhouse = () => {
   //const [plants, setPlants] = useState([]);
   // on mount: fetch user's collection of plants from the db
 
+
   //useEffect(() => {}, []);
   // {plants}
   return <AllRows url={url} />
+
 };
 
 export default Greenhouse;
