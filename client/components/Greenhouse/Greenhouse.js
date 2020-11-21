@@ -17,6 +17,7 @@ const Greenhouse = () => {
   //     <Link to="/search">Go to Search</Link>
   //   </div>
   // );
+
 };
 
 export default Greenhouse;

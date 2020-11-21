@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './Plant.scss';
 
-const Plant = () => {
+const Plant = (props) => {
   // state will be plant details
   // need to import plant img url somehow
   const [details, setDetails] = useState({

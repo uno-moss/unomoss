@@ -1,3 +1,4 @@
+
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -6,6 +7,7 @@ import Login from './components/Login/Login';
 import Plant from './components/Plant/Plant';
 import Profile from './components/Profile/Profile';
 import Greenhouse from './components/Greenhouse/Greenhouse';
+
 import SearchPlant from './components/SearchPlant/SearchPlant';
 
 const App = () => {
@@ -28,6 +30,9 @@ const App = () => {
             </li>
             <li>
               <Link to="/plant">Plant Page</Link>
+    </li>
+    <li>
+              <Link to="/search">SEARCH</Link>
             </li>
           </ul>
         </nav>
@@ -36,18 +41,18 @@ const App = () => {
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/plant">
-            <Plant />
-          </Route>
+          <Route path="/plant" render={(props) => <Plant {...props} />} />
+          {/* <Plant />
+          </Route> */}
           <Route path="/search">
             <SearchPlant />
           </Route>
           <Route path="/login">
-            <Login />
+            <LoginForm />
           </Route>
-          <Route path="/">
+          {/* <Route path="/">
             <Greenhouse />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>
