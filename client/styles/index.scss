@@ -12,10 +12,18 @@ body {
 
 nav {
   display: flex;
+  margin: 1em;
+  font-family: arial;
 
+  div.logo-container {
+    img {
+      height: 50px;
+    }
+  }
   ul {
     li {
       display: inline;
+      margin-right: 20px;
     }
   }
 }

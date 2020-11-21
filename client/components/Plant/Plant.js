@@ -42,6 +42,21 @@ const Plant = (props) => {
 
   // on mount: fetch plant details from database using passed in props as url search param? plant name??
 
+  const savePlantHandler = () => {
+    console.log(props);
+    const plant = {};
+    plant.commonName = props.location.userPlant.common_name;
+    plant.scientificName = props.location.userPlant.scientific_name;
+
+    fetch('/api/plantInfo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(plant),
+    });
+  };
+
   return (
     <div id="outerDiv2">
       <div id="innerDiv2">
@@ -71,7 +86,7 @@ const Plant = (props) => {
         Bloom Months: {bloomMonths}
         <br></br>
       </div>
-      <button id="savePlant" onClick="handleClick">
+      <button id="savePlant" onClick={savePlantHandler}>
         Save Plant
       </button>
     </div>
