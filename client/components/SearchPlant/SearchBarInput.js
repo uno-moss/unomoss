@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 require('regenerator-runtime/runtime');
+import SearchResults from './SearchResults';
 
 const apiKey = 'PM3BHHsn1BYggmzwVudKgtHVtS5yD-szFUEvt-VQ06I';
 
@@ -17,24 +18,35 @@ function SearchBarInput() {
   //sends the fetch request to API
   const fetchData = async (e) => {
     e.preventDefault();
+    console.log(searchTerm);
     const response = await axios.get(
       `https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants/search?token=${apiKey}&q=${searchTerm}`
     );
-    setPlants(response.data);
-    console.log(plants);
+    console.log(response.data.data);
+    setPlants(response.data.data);
   };
+
+  function plantClickHandle(e) {
+    console.log(e);
+  }
 
   function handleClick(e) {
     e.preventDefault();
     console.log(plants);
+    console.log(Array.isArray(plants));
   }
 
   return (
-    <form>
-      <input type="text" name="searchTerm" onChange={handleOnChange} />
-      <button onClick={fetchData}> SUBMIT</button>
-      <button onClick={handleClick}>TEST</button>
-    </form>
+    <div>
+      <form>
+        <input type="text" name="searchTerm" onChange={handleOnChange} />
+        <button onClick={fetchData}> Submit</button>
+        <button onClick={handleClick}>TEST</button>
+      </form>
+      {plants.length > 0 && (
+        <SearchResults plantClickHandle={plantClickHandle} plants={plants} />
+      )}
+    </div>
   );
 }
 
