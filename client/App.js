@@ -20,7 +20,7 @@ const App = () => {
           </div>
           <ul>
             <li>
-              <Link to="/">My Greenhouse</Link>
+              <Link to="/greenhouse">My Greenhouse</Link>
             </li>
             <li>
               <Link to="/profile">My Profile</Link>
@@ -47,12 +47,12 @@ const App = () => {
           <Route path="/search">
             <SearchPlant />
           </Route>
-          <Route path="/login">
-            <LoginForm />
-          </Route>
-          {/* <Route path="/">
+          <Route path="/greenhouse">
             <Greenhouse />
-          </Route> */}
+          </Route>
+          <Route path="/">
+            <Login />
+          </Route>
         </Switch>
       </div>
     </Router>
