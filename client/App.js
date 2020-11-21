@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Login from "./components/Login/Login";
+import LoginForm from "./components/Login/LoginForm";
 import Plant from "./components/Plant/Plant";
 import Profile from "./components/Profile/Profile";
-import Greenhouse from "./components/Greenhouse/Greenhouse";
+//import Greenhouse from "./components/Greenhouse/Greenhouse";
 import SearchPlant from "./components/SearchPlant/SearchPlant";
 
 const App = () => {
@@ -39,11 +39,11 @@ const App = () => {
             <SearchPlant />
           </Route>
           <Route path="/login">
-            <Login />
+            <LoginForm />
           </Route>
-          <Route path="/">
+          {/* <Route path="/">
             <Greenhouse />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>
