@@ -3,12 +3,10 @@ const bcrypt = require('bcrypt');
 
 const userController = {};
 
-// console.log(db);
-// console.log(db.User);
-
+// Create a new user
 userController.createUser = async (req, res, next) => {
   console.log('creating user');
-  const { email, password } = req.body;
+  const { email, password, username, firstName, lastName, zipCode } = req.body;
   if (!email || !password) {
     return next({ message: 'Email or password must be provided.' });
   }
@@ -21,6 +19,10 @@ userController.createUser = async (req, res, next) => {
     db.User.create({
       email: email,
       password: hash,
+      username,
+      firstName,
+      lastName,
+      zipCode,
     })
       .then((user) => {
         console.log(user);
@@ -35,8 +37,8 @@ userController.createUser = async (req, res, next) => {
   });
 };
 
+// Verify an existing user
 userController.verifyUser = async (req, res, next) => {
-  console.log('verifying user');
   if (!req.body.email || !req.body.password) {
     return next({ message: 'Email is not provided to verifyUser' });
   }
@@ -61,6 +63,7 @@ userController.verifyUser = async (req, res, next) => {
   });
 };
 
+// Get user record by /api/user/:id
 userController.getUser = async (req, res, next) => {
   if (req.params.id) {
     const user = await db.User.findOne({ where: { id: req.params.id } });
