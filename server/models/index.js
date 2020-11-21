@@ -35,29 +35,6 @@ Object.keys(db).forEach((key) => {
   }
 });
 
-// const models = {
-//   User: User(sequelize, DataTypes),
-//   PlantInfo: PlantInfo(sequelize, DataTypes),
-//   UserPlants: UserPlants(sequelize, DataTypes),
-// };
-
-// Object.keys(models).forEach((key) => {
-//   if ('associate' in models[key]) {
-//     models[key].associate(models);
-//   }
-// });
-
-// export { sequelize };
-
-// export default models;
-
-// sequelize.sync();
-
-// module.exports = {
-//   default: models,
-//   sequelize: sequelize,
-// };
-
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
