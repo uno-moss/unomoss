@@ -1,3 +1,4 @@
+const { PlantInfo } = require('../models/index');
 const db = require('../models/index');
 // const PlantInfo = require('../models/plantInfo');
 
@@ -49,35 +50,18 @@ plantInfoController.createPlant = async (req, res, next) => {
   return next();
 };
 
-//
-// plantInfoController.getPlantInfo = (req, res, next) => {
-//   db.findAll({
-//     attributes: ['commonName']
-//   })
-// };
-
-
-// // find all user plants
-// userPlantsController.getUserPlants = async (req, res, next) => {
-//   console.log('get user plant info');
-//   const findAllPlants = await UserPlants.findAll({
-//     where: {userId: req.body.userId}
-//   })
-//   if (findAllPlants.length === 0) {
-//     return next({ message: 'No plants found' });
-//   }
-//   res.locals.userPlants = findAllPlants;
-//   return next();
-// };
-
-// // find a user plant by the plant nickname when user clicks on plant info
-// userPlantsController.getUserPlant = async (req, res, next) => {
-//   console.log('get user plant info');
-//   await UserPlants.findAll({
-//     plantNickname: req.body.plantNickname,
-//   })
-//   return next();
-// };
+// get plant information based on plant it's tied to
+plantInfoController.getPlantInfo = async (req, res, next) => {
+  console.log('get user plant info');
+  const findAllPlants = await PlantInfo.findAll({
+    where: {plantId: req.body.plantId}
+  })
+  if (findAllPlants.length === 0) {
+    return next({ message: 'No plant information found' });
+  }
+  res.locals.findAllPlants = findAllPlants;
+  return next();
+};
 
 
 module.exports = plantInfoController;
