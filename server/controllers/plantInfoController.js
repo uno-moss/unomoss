@@ -1,4 +1,5 @@
-const PlantInfo = require('../models/plantInfo');
+const db = require('../models/index');
+// const PlantInfo = require('../models/plantInfo');
 
 const plantInfoController = {};
 
@@ -6,7 +7,7 @@ const plantInfoController = {};
 plantInfoController.createPlant = async (req, res, next) => {
   console.log('creating plant info');
 
-  const createPlantInfos = await PlantInfo.create({
+  const createPlantInfos = await db.PlantInfo.create({
     commonName: req.body.common_name,
     slug: req.body.slug,
     scientificName: req.body.scientificName,
@@ -49,11 +50,11 @@ plantInfoController.createPlant = async (req, res, next) => {
 };
 
 //
-plantInfoController.getPlantInfo = (req, res, next) => {
-  db.findAll({
-    attributes: ['commonName']
-  })
-};
+// plantInfoController.getPlantInfo = (req, res, next) => {
+//   db.findAll({
+//     attributes: ['commonName']
+//   })
+// };
 
 
 // // find all user plants
