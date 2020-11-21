@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -50,9 +51,9 @@ const LoginForm = () => {
         <br></br>
         <p>
           Don't have an account?
-          <a href="#" id="signupbutton">
+          <button id="signUpClick" onClick="">
             Sign up
-          </a>
+          </button>
         </p>
       </div>
       <div>&nbsp;</div>

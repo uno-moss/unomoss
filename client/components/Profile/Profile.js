@@ -4,6 +4,7 @@ import Modal from './ProfileModal';
 import styles from '../../styles/modal.scss';
 
 const Profile = () => {
+  // hook that stores the state of user info
   const [user, setUser] = useState({
     username: '',
     email: '',
@@ -12,6 +13,7 @@ const Profile = () => {
   });
   const { username, email, password, zipCode } = user;
 
+  // hook that stores the user input when updating account in modal
   const [userModal, setModal] = useState({
     modal: false,
     newUsername: '',
@@ -21,7 +23,8 @@ const Profile = () => {
   });
   const { modal, newUsername, newEmail, newPassword, newZipCode } = userModal;
 
-  // on page mount: fetch user data and set state with response
+  // on page mount: fetch user data and set user state with response
+  // if you're unfamiliar with hooks: setting second arg to empty array sets code (fetch) to run on page load/mount
   useEffect(() => {
     fetch('/profile').then((res) =>
       res

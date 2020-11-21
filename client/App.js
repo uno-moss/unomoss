@@ -1,10 +1,13 @@
+
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import LoginForm from './components/Login/LoginForm';
+import Login from './components/Login/Login';
 import Plant from './components/Plant/Plant';
 import Profile from './components/Profile/Profile';
-//import Greenhouse from "./components/Greenhouse/Greenhouse";
+import Greenhouse from './components/Greenhouse/Greenhouse';
+
 import SearchPlant from './components/SearchPlant/SearchPlant';
 
 const App = () => {
@@ -26,6 +29,9 @@ const App = () => {
               <Link to="/login">Login Page</Link>
             </li>
             <li>
+              <Link to="/plant">Plant Page</Link>
+    </li>
+    <li>
               <Link to="/search">SEARCH</Link>
             </li>
           </ul>
