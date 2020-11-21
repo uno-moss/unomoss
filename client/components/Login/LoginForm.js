@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./Login.scss";
-import SignupForm from "./SignupForm.js";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './Login.scss';
+import SignupForm from './SignupForm.js';
 
 const LoginForm = () => {
   const { register, handleSubmit, watch, errors } = useForm();

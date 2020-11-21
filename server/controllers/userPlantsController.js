@@ -9,7 +9,7 @@ userPlantsController.createUserPlant = async (req, res, next) => {
   console.log('creating user plant');
 
   const createUserPlants = await db.UserPlants.create({
-    plantNickname: req.body.plantNickname,
+    plantNickName: req.body.plantNickName,
     dateAcquired: req.body.dateAcquired,
     status: req.body.status,
     plantID: req.body.plantID,
@@ -36,10 +36,10 @@ userPlantsController.getUserPlants = async (req, res, next) => {
   return next();
 };
 
-// find a user plant by the plant nickname when user clicks on plant info
+// find a user plant by the plant nickname when user clicks on plant
 userPlantsController.getUserPlant = async (req, res, next) => {
   console.log('get user plant info');
-  const findSpecificPlant = await UserPlants.findAll({
+  const findSpecificPlant = await db.UserPlants.findAll({
     id: req.params.id,
   })
   if (findSpecificPlant.length === 0) {
