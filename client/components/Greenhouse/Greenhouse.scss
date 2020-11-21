@@ -1,0 +1,18 @@
+// #allPlants {
+//   display: grid;
+//   grid-template-columns: 1fr min-content min-content min-content 1fr;
+//   grid-template-rows: 1fr;
+//   gap: 0px 0px;
+//   grid-template-areas: '. . . . .';
+//   border: 1px solid green;
+// }
+#outerDiv {
+  width: 600px;
+}
+#innerDiv {
+  width: 200px;
+  background-color: gray;
+}
+img {
+  width: 200px;
+}
