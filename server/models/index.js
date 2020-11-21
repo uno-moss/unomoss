@@ -9,14 +9,14 @@ const UserPlants = require('./userPlants');
 const env = process.env.NODE_ENV || 'development';
 const db = {};
 
-const sequelize = new Sequelize(
-  'postgres://gpgezhvl:QiSf5ksmzLBek_n1Xc9IXHQ5YFLb--lM@rajje.db.elephantsql.com:5432/gpgezhvl'
-);
+// const sequelize = new Sequelize(
+//   'postgres://gpgezhvl:QiSf5ksmzLBek_n1Xc9IXHQ5YFLb--lM@rajje.db.elephantsql.com:5432/gpgezhvl'
+// );
 
-// const sequelize = new Sequelize('test', 'admin', 'password', {
-//   host: 'localhost',
-//   dialect: 'postgres',
-// });
+const sequelize = new Sequelize('test', 'admin', 'password', {
+  host: 'localhost',
+  dialect: 'postgres',
+});
 
 sequelize
   .authenticate()
@@ -34,29 +34,6 @@ Object.keys(db).forEach((key) => {
     db[key].associate(db);
   }
 });
-
-// const models = {
-//   User: User(sequelize, DataTypes),
-//   PlantInfo: PlantInfo(sequelize, DataTypes),
-//   UserPlants: UserPlants(sequelize, DataTypes),
-// };
-
-// Object.keys(models).forEach((key) => {
-//   if ('associate' in models[key]) {
-//     models[key].associate(models);
-//   }
-// });
-
-// export { sequelize };
-
-// export default models;
-
-// sequelize.sync();
-
-// module.exports = {
-//   default: models,
-//   sequelize: sequelize,
-// };
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
