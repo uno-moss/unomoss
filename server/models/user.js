@@ -1,4 +1,5 @@
-const sequelize = require("sequelize");
+const sequelize = require('sequelize');
+// const bcrypt = require('bcryptjs');
 
 const user = (sequelize, DataTypes) => {
   const User = sequelize.define('user', {
@@ -29,12 +30,16 @@ const user = (sequelize, DataTypes) => {
     },
   });
 
-  User.associate = models => {
+  User.associate = (models) => {
     User.hasMany(models.UserPlants);
-  }
+  };
+
+  // User.createUser = (userInfo) => {
+
+  // };
 
   return User;
-}
+};
 
 // export default user;
 module.exports = user;
