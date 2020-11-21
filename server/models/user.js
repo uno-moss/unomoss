@@ -1,12 +1,12 @@
 const sequelize = require('sequelize');
+// const { DataTypes } = require('sequelize');
 // const bcrypt = require('bcryptjs');
 
 const user = (sequelize, DataTypes) => {
   const User = sequelize.define('user', {
     username: {
       type: DataTypes.STRING,
-      unique: true,
-      allowNull: false,
+      allowNull: true,
     },
     password: {
       type: DataTypes.STRING,
@@ -19,14 +19,15 @@ const user = (sequelize, DataTypes) => {
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     zipCode: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
   });
 
@@ -43,3 +44,4 @@ const user = (sequelize, DataTypes) => {
 
 // export default user;
 module.exports = user;
+// module.exports = User;

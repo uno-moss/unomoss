@@ -2,8 +2,8 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-// const models = require('./models');
-// const { sequelize } = require('./models');
+const models = require('./models/index');
+const { sequelize } = require('./models');
 
 const apiRouter = require('./routes/api');
 
@@ -28,12 +28,12 @@ app.use((err, req, res, next) => {
     message: { err: 'An error occurred' },
   };
   const error = Object.assign({}, defaultError, err);
-  console.log(error.log);
+  console.log(error);
   return res.status(error.status).json(error.message);
 });
 
-//sequelize.sync().then(() => {
-app.listen(3000, () => {
-  console.log(`App listening on port 3000!`);
+sequelize.sync().then(() => {
+  app.listen(3000, () => {
+    console.log(`App listening on port 3000!`);
+  });
 });
-//});
