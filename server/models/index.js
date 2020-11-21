@@ -9,14 +9,14 @@ const UserPlants = require('./userPlants');
 const env = process.env.NODE_ENV || 'development';
 const db = {};
 
-// const sequelize = new Sequelize(
-//   'postgres://gpgezhvl:QiSf5ksmzLBek_n1Xc9IXHQ5YFLb--lM@rajje.db.elephantsql.com:5432/gpgezhvl'
-// );
+const sequelize = new Sequelize(
+  'postgres://gpgezhvl:QiSf5ksmzLBek_n1Xc9IXHQ5YFLb--lM@rajje.db.elephantsql.com:5432/gpgezhvl'
+);
 
-const sequelize = new Sequelize('test', 'admin', 'password', {
-  host: 'localhost',
-  dialect: 'postgres',
-});
+// const sequelize = new Sequelize('test', 'admin', 'password', {
+//   host: 'localhost',
+//   dialect: 'postgres',
+// });
 
 sequelize
   .authenticate()
